@@ -15,7 +15,7 @@ class PersonalTable extends Migration
     {
         Schema::create('personals', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('yearly_no')->uniqid();
+            $table->string('yearly_no')->unique()->index();
             $table->string('patient_name');
             $table->string('gender');
             $table->string('date_of_birth');

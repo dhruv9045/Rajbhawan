@@ -6,8 +6,8 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    <div class="col-md-4 ">{{ __('List') }} 
-                    </div>
+                    {{-- <div class="col-md-4 ">{{ __('List') }} 
+                    </div> --}}
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">   
                         <a href="{{ route('patient') }}"><button class="btn btn-primary" type="button">Add Patient</button></a>
                     </div>

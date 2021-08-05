@@ -32,6 +32,7 @@ class PersonalController extends Controller
         if($personal->save()) {
             return redirect('/home')->with("message", $request->patient_name . " details have been save Successfuly. I will contact you soon!!");
         }
+        
         return back()->with("message", $request->patient_name . " details can't saved. Please try again");
     
     }
@@ -56,6 +57,7 @@ class PersonalController extends Controller
             'phone_no'=>'required',
            
         ]);
+        
         $personal->patient_name = $request->patient_name;
         $personal->yearly_no = $request->yearly_no;
         $personal->gender = $request->gender;
@@ -77,7 +79,7 @@ class PersonalController extends Controller
     }
     public function showPatient($yearly_no,$id){
         $showDetail = Personals::find($id);
-        $showSymptom= Symptoms::find($yearly_no);
+        $showSymptom= Symptoms::where('yearly_no' , '=',$yearly_no)->get();
         // dd($yearly_no,$id);
 
         return view('showPagePatient',compact('showDetail','showSymptom'));

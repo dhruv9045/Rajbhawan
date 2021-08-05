@@ -90,7 +90,7 @@
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
-                    {{-- <tbody>@foreach ($showSymptom as $showSymptom)
+                    <tbody>@foreach ($showSymptom as $showSymptom)
                       <tr>
                           
                         <th scope="row">{{$showSymptom['date_of_visit']}}</th>
@@ -100,12 +100,12 @@
                         <td>{{$showSymptom['disease']}}</td>
                         <td>{{$showSymptom['remark']}}</td>
                         
-                      <td><a href="/home/symptomForm/edit/{{$showSymptom['id']}}" class="btn">Edit</a></td>
+                      <td><a href="/home/symptomForm/edit/{{$showSymptom['id']}}" class="btn" style="background-color: blue; color:white;">Edit</a></td>
 
                      
                       </tr>
                      @endforeach
-                    </tbody> --}}
+                    </tbody>
                   </table>
                 
                 <div class="card-body">
