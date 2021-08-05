@@ -12,16 +12,17 @@
                         <a href="{{ route('patient') }}"><button class="btn btn-primary" type="button">Add Patient</button></a>
                     </div>
                 </div>
-                <table class="table">
+                <table class="table-responsive-sm table">
                     <thead>
                       <tr>
                         <th scope="col">Sr.no</th>
                         <th scope="col">Patient Name</th>
                         <th scope="col">Yearly no</th>
                         <th scope="col">Gender</th>
-                        <th scope="col">Date of Birth</th>
+                        <th scope="col">DOB</th>
                         <th scope="col">Mobile no.</th>
                         <th scope="col">Disease</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>@foreach ($patientDetail as $patientDetail)
@@ -49,13 +50,12 @@
                       </td> --}}
 
                       {{-- Edit Details --}}
-                      {{-- <td><form id="{{$patientDetail->id}}" action="{{route('editPatient',$patientDetail->id)}}" method="post">
-                      @csrf
-                      <button type="submit" class="btn btn-danger">
-                        <i class="fa fa-trash"></i> Delete
-                    </button>
-                      </form></td> --}}
-                      </tr>@endforeach
+                      
+                     <td><a href="/home/personForm/edit/{{$patientDetail['id']}}" class="btn" style="background-color: blue; color:white;">Edit</a></td>
+                     <td><a href="/home/patient/view/{{$patientDetail['yearly_no']}}/id/{{$patientDetail['id']}}" class="btn" style="background-color: green; color:white;">View</a></td>
+                     <td><a href="/home/symptomForm" class="btn" style="background-color: yellow; color:black;">Add Symptoms</a></td>
+                      </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 

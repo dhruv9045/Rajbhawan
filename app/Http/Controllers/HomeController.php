@@ -34,9 +34,6 @@ class HomeController extends Controller
     {
         return view('personForm');
     }
-    public function adminSymptoms()
-    {
-        # code...
-        return view('symptom');
-    }
+    
+   
 }

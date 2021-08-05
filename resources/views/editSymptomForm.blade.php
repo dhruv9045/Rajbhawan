@@ -101,7 +101,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Patient Form') }}</div>
-                <form class="col px-md-5 "action="/home/patient/addSymptom" role="form" method="post">
+                <form class="col px-md-5 "action="/home/patient/update/{{$personal['id']}}" role="form" method="post">
                     @csrf
                     @if(session('message'))
                     <div class="alert alert-success text-center text-black message position-relative" role="alert">
@@ -110,45 +110,44 @@
                     </div>
                     @endif 
                     <div class="row">
-                    <div class="form-group col-md">
+                    <div class="col-md">
                       <label class="form-label">Disease</label>
-                      <input type="text" class="form-control" name="disease" id="disease" placeholder="disease" required>
+                      <input type="text" class="form-control" name="disease" id="disease" placeholder="disease" value="{{$personal['disease']}}" required>
                       @error('disease')
                       <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
                     </div>
                     <div class="form-group col-md-4">
                         <label class="form-label">Yearly Number</label>
-                        <input type="number"  class="form-control" minlength="4" maxlength="8" name="yearly_no" id="yearly_no" placeholder="Yearly number">
+                        <input type="number"  class="form-control" minlength="4" maxlength="8" name="yearly_no" id="yearly_no" placeholder="Yearly number" value="yearly_no">
                         @error('yearly_no')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                       </div>
-                    <div class="form-group  col-md">
+                    <div class="col-md">
                         <label class="form-label">Symptoms</label>
-                        <input type="text" class="form-control" name="symptoms" id="symptoms" placeholder="symptoms" required>
+                        <input type="text" class="form-control" name="symptoms" id="symptoms" placeholder="symptoms" value="{{$personal['symptoms']}}" required>
                         @error('symptoms')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="form-group col-md">
+                    <div class="col-md">
                         <label class="form-label">Treatement</label>
-                        <input type="text" class="form-control" name="treatement" id="treatement" placeholder="treatement" required>
+                        <input type="text" class="form-control" name="treatement" id="treatement" placeholder="treatement" value="{{$personal['treatement']}}" required>
                         @error('treatement')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
                 <div class="row">
-                <div class="form-group col">
+                <div class="col-md">
                     <label class="form-label">Remark</label>
-                    <input type="text" class="form-control" name="remark" id="remark" placeholder="remark" >
+                    <input type="text" class="form-control" name="remark" id="remark" placeholder="remark" value="{{$personal['remark']}}" >
                     @error('remark')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 </div>
-               
                 
                 <button type="submit" class="btn btn-primary">Submit</button>
                   </form>

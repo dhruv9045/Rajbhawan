@@ -5,6 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
+use function GuzzleHttp\Promise\all;
+
 class IsAdmin
 {
     /**
@@ -19,6 +21,7 @@ class IsAdmin
         if(auth()->user()->is_admin==1){
             return $next($request);
         }
+        dd('hello');
         return redirect('home')->with('error',"you dont have access to admin.");
     }
 }

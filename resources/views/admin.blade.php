@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
                     <h1>THIS IS ADMIN PAGE</h1>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">   
-                        <a href="{{ route('admin.symptoms') }}"><button class="btn btn-primary" type="button">Add Patient</button></a>
+                        <a href="{{ route('admin.symptoms') }}"><button class="btn btn-primary" type="button">Add Symptoms</button></a>
                     </div>
                 <div class="card-body">
                     @if (session('status'))

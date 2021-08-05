@@ -90,7 +90,7 @@
 
         @php
         // Get today's date
-        $dateOfVisit = date('y');
+        $yearly_no = date("Y");
         @endphp
 
         <main class="py-4">
@@ -101,56 +101,80 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Patient Form') }}</div>
-                <form class="col px-md-5 "action="/home/patient/addSymptom" role="form" method="post">
+                <form class="col px-md-5 " action="/home/personForm/update/{{$personal['id']}}" role="form" method="post">
                     @csrf
                     @if(session('message'))
-                    <div class="alert alert-success text-center text-black message position-relative" role="alert">
-                    <div class="content"> <i class="icon fa fa-check"></i> {{session('message')}}
-                    </div>
-                    </div>
-                    @endif 
+                 <div class="alert alert-success text-center text-black message position-relative" role="alert">
+                   <div class="content"> <i class="icon fa fa-check"></i> {{session('message')}}
+                   </div>
+                 </div>
+                 @endif 
                     <div class="row">
-                    <div class="form-group col-md">
-                      <label class="form-label">Disease</label>
-                      <input type="text" class="form-control" name="disease" id="disease" placeholder="disease" required>
-                      @error('disease')
+                    <div class="col-md">
+                      <label class="form-label">Name of Patient</label>
+                      <input type="text" class="form-control" name="patient_name" id="patient_name" placeholder="Name of Patient" value="{{$personal['patient_name']}}" required>
+                      @error('patient_name')
                       <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
                     </div>
-                    <div class="form-group col-md-4">
-                        <label class="form-label">Yearly Number</label>
-                        <input type="number"  class="form-control" minlength="4" maxlength="8" name="yearly_no" id="yearly_no" placeholder="Yearly number">
-                        @error('yearly_no')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                      </div>
-                    <div class="form-group  col-md">
-                        <label class="form-label">Symptoms</label>
-                        <input type="text" class="form-control" name="symptoms" id="symptoms" placeholder="symptoms" required>
-                        @error('symptoms')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                    {{-- <div class="col-md-2">
+                        <label class="form-label">Age</label>
+                        <input type="number" minlength="2" maxlength="3" class="form-control" name="date_of_birth" id="age">
+                      </div> --}}
+                    <div class="col-md">
+                      <label class="form-label">Date of Birth</label>
+                      <input type="date" class="form-control" name="date_of_birth" id="date_of_birth" value="{{$personal['date_of_birth']}}">
                     </div>
-                    <div class="form-group col-md">
-                        <label class="form-label">Treatement</label>
-                        <input type="text" class="form-control" name="treatement" id="treatement" placeholder="treatement" required>
-                        @error('treatement')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                    <div class="col-md">
+                        <label class="form-label">Gender</label>
+                        <div class="form-group row px-md-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male" @if ($personal['gender'] === "Male")
+                                     checked @endif required>
+                                <label class="form-check-label">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female" @if ($personal['gender'] === "Female")
+                                checked @endif required>
+                                <label class="form-check-label">Female</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio3" value="Other" @if ($personal['gender'] === "Other")
+                                checked @endif required>
+                                <label class="form-check-label">Others</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                <div class="form-group col">
-                    <label class="form-label">Remark</label>
-                    <input type="text" class="form-control" name="remark" id="remark" placeholder="remark" >
-                    @error('remark')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-                </div>
-               
                 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group row">
+                    <div class="form-group col-md-4">
+                      <label class="form-label">Yearly Number</label>
+                      <input type="number"  class="form-control" minlength="4" maxlength="8" name="yearly_no" id="yearly_no" placeholder="Yearly number" value="{{$personal['yearly_no']}}">
+                      @error('yearly_no')
+                      <div class="alert alert-danger">{{ $message }}</div>
+                      @enderror
+                    </div>
+                   
+                    <div class="form-group col-md-4">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" pattern="[6789][0-9]{9}" class="form-control" length="10" name="phone_no" id="phone_no" placeholder="Patient phone number" value="{{$personal['phone_no']}}" required>
+                        @error('phone_no')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                {{-- </div> --}}
+                {{-- <div class="form-group row"> --}}
+                    <div class="form-group col">
+                      <label class="form-label">Disease</label>
+                      <input type="text" class="form-control" name="disease" id="disease" placeholder="Disease" value="{{$personal['disease']}}" required>
+                      @error('disease')
+                      <div class="alert alert-danger" >{{ $message }}
+                    </div>
+                      @enderror
+                    </div>
+                </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
                 <div class="card-body">
                     @if (session('status'))

@@ -54,14 +54,14 @@ class LoginController extends Controller
         if(Auth::attempt(['email' => $email, 'password' => $password]))
         {
 
-            if (Auth::user()->is_admin == 1){
-                return redirect()->route('admin.home');
-            }
-            else if (Auth::user()->is_admin == 0){
+            // if (Auth::user()->is_admin == 1){
+            //     return redirect()->route('admin.home');
+            // }
+            // else if (Auth::user()->is_admin == 0){
                 return redirect('/home');
-            }else{
-                return redirect('/');
-            }
+            // }else{
+            //     return redirect('/');
+            // }
         }
         else{
             return back()->with('error','Invalid Email-Address or Password.');

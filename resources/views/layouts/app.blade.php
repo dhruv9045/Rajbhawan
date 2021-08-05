@@ -59,11 +59,11 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     {{-- Profile --}}
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    {{-- <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('profile').submit();">
                                         {{ __('Profile') }}
-                                    </a>
+                                    </a> --}}
 
                                     <form id="profile" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
