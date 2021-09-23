@@ -112,37 +112,40 @@
                     <div class="row">
                     <div class="col-md">
                       <label class="form-label">Disease</label>
-                      <input type="text" class="form-control" name="disease" id="disease" placeholder="disease" value="{{$personal['disease']}}" required>
+                      <input type="text" class="form-control" name="disease" id="disease" placeholder="Disease" value="{{$personal['disease']}}" required>
                       @error('disease')
                       <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
                     </div>
                     <div class="form-group col-md-4">
                         <label class="form-label">Yearly Number</label>
-                        <input type="number"  class="form-control" minlength="4" maxlength="8" name="yearly_no" id="yearly_no" placeholder="Yearly number" value="yearly_no">
+                        <input type="number"  class="form-control" minlength="4" maxlength="8" name="yearly_no" id="yearly_no" placeholder="Yearly Number" value="yearly_no">
                         @error('yearly_no')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                       </div>
                     <div class="col-md">
                         <label class="form-label">Symptoms</label>
-                        <input type="text" class="form-control" name="symptoms" id="symptoms" placeholder="symptoms" value="{{$personal['symptoms']}}" required>
+                        <input type="text" class="form-control" name="symptoms" id="symptoms" placeholder="Symptoms" value="{{$personal['symptoms']}}" required>
                         @error('symptoms')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="col-md">
-                        <label class="form-label">Treatement</label>
-                        <input type="text" class="form-control" name="treatement" id="treatement" placeholder="treatement" value="{{$personal['treatement']}}" required>
-                        @error('treatement')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
+                    
                 </div>
                 <div class="row">
-                <div class="col-md">
+                <div class="form-group col">
+                    <label class="form-label">Treatement</label>
+                    <textarea type="text" class="form-control" name="treatement" id="treatement" rows="5" placeholder="Treatement" value="{{$personal['treatement']}}" required></textarea>
+                    @error('treatement')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                </div>
+                <div class="row">
+                <div class="form-group col">
                     <label class="form-label">Remark</label>
-                    <input type="text" class="form-control" name="remark" id="remark" placeholder="remark" value="{{$personal['remark']}}" >
+                    <input type="text" class="form-control" name="remark" id="remark" placeholder="Remark" value="{{$personal['remark']}}" >
                     @error('remark')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror

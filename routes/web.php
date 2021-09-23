@@ -35,6 +35,7 @@ Route::post('/home/patient/addSymptom',[App\Http\Controllers\SymptomController::
 Route::get('/home/symptomForm', [App\Http\Controllers\SymptomController::class, 'showSymptom'])->name('symptom.form');
 Route::get('/home/symptomForm/edit/{id}', [App\Http\Controllers\SymptomController::class, 'editSymptom'])->name('symptom.edit');
 Route::post('/home/patient/update/{id}', [App\Http\Controllers\SymptomController::class, 'updateSymptom'])->name('symptom.update');
+Route::get('/home/symptomForm/print/{yearly_no}/id/{id}', [App\Http\Controllers\SymptomController::class, 'printSymptom'])->name('symptom.print');
 
 
 // Route::get('/home/patient/view/{id}', [App\Http\Controllers\SymptomController::class, 'showPatient'])->name('home.show.symptom');

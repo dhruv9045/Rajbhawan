@@ -101,8 +101,8 @@
                         <td>{{$showSymptom['remark']}}</td>
                         
                       <td><a href="/home/symptomForm/edit/{{$showSymptom['id']}}" class="btn" style="background-color: blue; color:white;">Edit</a></td>
-
-                     
+                      <td><a href="/home/symptomForm/print/{{$showDetail['yearly_no']}}/id/{{$showSymptom['id']}}" class="btn" style="background-color: gray; color:white;" target="blank">Print</a></td>
+           
                       </tr>
                      @endforeach
                     </tbody>

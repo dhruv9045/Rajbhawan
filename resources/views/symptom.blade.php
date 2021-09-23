@@ -119,30 +119,33 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label class="form-label">Yearly Number</label>
-                        <input type="number"  class="form-control" minlength="4" maxlength="8" name="yearly_no" id="yearly_no" placeholder="Yearly number">
+                        <input type="number"  class="form-control" minlength="4" maxlength="8" name="yearly_no" id="yearly_no" placeholder="Yearly Number">
                         @error('yearly_no')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                       </div>
                     <div class="form-group  col-md">
                         <label class="form-label">Symptoms</label>
-                        <input type="text" class="form-control" name="symptoms" id="symptoms" placeholder="symptoms" required>
+                        <input type="text" class="form-control" name="symptoms" id="symptoms" placeholder="Symptoms" required>
                         @error('symptoms')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="form-group col-md">
-                        <label class="form-label">Treatement</label>
-                        <input type="text" class="form-control" name="treatement" id="treatement" placeholder="treatement" required>
-                        @error('treatement')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
+                   
+                </div>
+                <div class="row">
+                <div class="form-group col">
+                    <label class="form-label">Treatement</label>
+                    <textarea type="text" class="form-control" rows="5" name="treatement" id="treatement" placeholder="Treatement" required></textarea>
+                    @error('treatement')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
                 </div>
                 <div class="row">
                 <div class="form-group col">
                     <label class="form-label">Remark</label>
-                    <input type="text" class="form-control" name="remark" id="remark" placeholder="remark" >
+                    <input type="text" class="form-control" name="remark" id="remark" placeholder="Remark" >
                     @error('remark')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror

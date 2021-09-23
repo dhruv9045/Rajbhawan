@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Personals;
 use App\Models\Symptoms;
 use Illuminate\Http\Request;
+use PDF;
 
 class SymptomController extends Controller
 {
@@ -77,6 +78,13 @@ class SymptomController extends Controller
         }
         return back()->with("message", $request->disease . " details can't saved. Please try again");
     
+    }
+    public function printSymptom($yearly_no,$id){
+        $showDetail = Personals::where('yearly_no' , '=', $yearly_no)->get();
+        $showSymptom = Symptoms::find($id);
+        return view('printPdfPage',compact('showDetail','showSymptom'));
+
+
     }
 
 }
