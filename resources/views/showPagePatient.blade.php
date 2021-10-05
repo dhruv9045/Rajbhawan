@@ -107,7 +107,7 @@
                         <button class="btn btn-primary" type="submit" title="Edit Diagnosis">
                         <span class="fas fa-edit"></span>
                     </button></a></td>
-                      <td><a href="/home/symptomForm/print/{{$showDetail['yearly_no']}}/id/{{$showSymptom['id']}}" >
+                      <td><a href="/home/symptomForm/print/{{$showDetail['yearly_no']}}/id/{{$showSymptom['id']}}" target="__blank">
                         <button class="btn btn-danger" type="submit" title="Print">
                         <span class="fas fa-print"></span>
                     </button></a></td>

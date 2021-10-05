@@ -27,6 +27,8 @@ Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHom
 Route::get('/home/personForm', [App\Http\Controllers\HomeController::class, 'personalForm'])->name('patient');
 Route::post('/home/personForm', [App\Http\Controllers\PersonalController::class, 'index'])->name('addpatient');
 Route::get('/home', [App\Http\Controllers\PersonalController::class, 'getPersonDetail']);
+// Route::get('/home/{search}', [App\Http\Controllers\PersonalController::class, 'getPersonDetai']);
+
 // Route::delete('/home/personForm/{id}', [App\Http\Controllers\PersonalController::class, 'deletePatient'])->name('deletePatient');
 Route::get('/home/personForm/edit/{id}', [App\Http\Controllers\PersonalController::class, 'editPagePatient'])->name('editPatient');
 Route::post('/home/personForm/update/{id}', [App\Http\Controllers\PersonalController::class, 'updateFormPatient'])->name('updateFormPatient');

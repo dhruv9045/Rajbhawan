@@ -25,7 +25,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand">
+                <a class="navbar-brand" href="/home">
                     {{ __('Punjab Raj Bahawan Dispensary, Chandigarh') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -93,15 +93,17 @@
         <main class="py-4">
             @yield('content')
         </main>
-       
-    </div>
-    <footer>
-        <p>&copy;@php  
-            echo "Copyright ";  
-                echo date("Y");
-                echo " dksDev";
-            @endphp ||
-            Developed by: <a href="https://dksdev.com" target="__blank">https://dksdev.com</a></p>
+        <footer class="fixed-bottom" style="background-color:white;">
+            <center>
+            <p>&copy;@php  
+                echo "Copyright ";  
+                    echo date("Y");
+                    echo " dksDev";
+                @endphp ||
+                Developed by: <a href="https://dksdev.com" target="__blank">https://dksdev.com</a></p>
+            </center>
         </footer>
+    </div>
+   
 </body>
 </html>

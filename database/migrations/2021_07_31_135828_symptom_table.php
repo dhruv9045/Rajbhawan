@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-Use \Carbon\Carbon;
 
 class SymptomTable extends Migration
 {
@@ -18,7 +17,7 @@ class SymptomTable extends Migration
             $table->id()->autoIncrement();
             $table->integer('yearly_no')->unsigned();
             $table->foreign('yearly_no')->references('yearly_no')->on('personal')->onDelete('cascade');
-            $table->date('date_of_visit')->default(Carbon::now());
+            $table->date('date_of_visit');
             $table->string('disease');            
             $table->string('symptoms');
             $table->string('treatement');

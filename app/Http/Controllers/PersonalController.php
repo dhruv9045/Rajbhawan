@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Personals;
 use App\Models\Symptoms;
+use Faker\Provider\ar_JO\Person;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -38,9 +39,21 @@ class PersonalController extends Controller
     }
 
     
-    public function getPersonDetail() {
-        $patientDetail = Personals::all();
-        return view('home', compact('patientDetail')); 
+    public function getPersonDetail(Request $request) {
+      
+        $patientDetail = Personals::where([
+            ['phone_no','!=',Null],
+            [function($query) use ($request){
+                if(($term = $request->term)){
+                    $query->orWhere('phone_no','LIKE','%'.$term.'%')->get();
+                }
+            }]
+            ])
+            ->orderBy("id",'desc')
+            ->paginate(10);
+
+        // $patientDetail = Personals::all();
+        return view('home', compact('patientDetail'))->with('i'); 
     }
     public function deletePatient($id){
         $personal = Personals::where('id', $id)->firstorfail()->delete();
@@ -79,7 +92,7 @@ class PersonalController extends Controller
     }
     public function showPatient($yearly_no,$id){
         $showDetail = Personals::find($id);
-        $showSymptom= Symptoms::where('yearly_no' , '=',$yearly_no)->get();
+        $showSymptom= Symptoms::where('yearly_no' , '=',$yearly_no)->get()->sortByDesc('id');
         // dd($yearly_no,$id);
 
         return view('showPagePatient',compact('showDetail','showSymptom'));

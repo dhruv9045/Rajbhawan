@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Personals;
 use App\Models\Symptoms;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use PDF;
 
@@ -24,11 +25,12 @@ class SymptomController extends Controller
         ]);
 
         // dd($request->all(),$request->date_of_visit);
-        
+        $dateofvisit=Carbon::now()->format('Y-m-d');
+
         $disease = new Symptoms;
         $disease->yearly_no = $request->yearly_no;
         $disease->disease = $request->disease;
-        // $disease->date_of_visit = $request->date_of_visit;
+        $disease->date_of_visit = $dateofvisit;
         $disease->symptoms = $request->symptoms;
         $disease->treatement = $request->treatement;
         $disease->remark = $request->remark;
@@ -46,7 +48,7 @@ class SymptomController extends Controller
 
     public function showPatient($id){
         $showSymptom = Symptoms::find($id);
-
+        
         return view('showPagePatient',compact('showSymptom'));
 
     }

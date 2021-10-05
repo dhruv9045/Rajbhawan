@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-4">
                       <div class="mx-auto pull-right">
-                              <form action="" method="GET" role="search">
+                              <form action="/home" method="GET" role="search">
                                   <div class="input-group">
                                       <span class="input-group-btn mr-5 mt-1">
                                           <button class="btn btn-info" type="submit" title="Search Patient">
@@ -24,7 +24,7 @@
                                           </button>
                                       </span>
                                       <input type="text" class="form-control mr-2" name="term" placeholder="Search projects" id="term">
-                                      <a href="" class=" mt-1">
+                                      <a href="/home" class=" mt-1">
                                           <span class="input-group-btn">
                                               <button class="btn btn-danger" type="button" title="Refresh page">
                                                   <span class="fas fa-sync-alt"></span>
@@ -54,7 +54,7 @@
                       <tr>
                           
                      
-                        <th scope="row">{{$patientDetail['id']}}</th>
+                        <th scope="row">{{++$i}}</th>
                         <td>{{$patientDetail['patient_name']}}</td>
                         <td>{{$patientDetail['yearly_no']}}</td>
                         <td>{{$patientDetail['gender']}}</td>

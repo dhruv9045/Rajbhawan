@@ -87,11 +87,7 @@
                 </div>
             </div>
         </nav>
-
-        @php
-        // Get today's date
-        $dateOfVisit = date('y');
-        @endphp
+       
 
         <main class="py-4">
             
