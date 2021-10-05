@@ -32,7 +32,7 @@ Route::get('/home/personForm/edit/{id}', [App\Http\Controllers\PersonalControlle
 Route::post('/home/personForm/update/{id}', [App\Http\Controllers\PersonalController::class, 'updateFormPatient'])->name('updateFormPatient');
 Route::get('/home/patient/view/{yearly_no}/id/{id}', [App\Http\Controllers\PersonalController::class, 'showPatient'])->name('home.show');
 Route::post('/home/patient/addSymptom',[App\Http\Controllers\SymptomController::class,'addSymptoms'])->name('symptom.add');
-Route::get('/home/symptomForm', [App\Http\Controllers\SymptomController::class, 'showSymptom'])->name('symptom.form');
+Route::get('/home/symptomForm/{yearly_no}', [App\Http\Controllers\SymptomController::class, 'showSymptom'])->name('symptom.form');
 Route::get('/home/symptomForm/edit/{id}', [App\Http\Controllers\SymptomController::class, 'editSymptom'])->name('symptom.edit');
 Route::post('/home/patient/update/{id}', [App\Http\Controllers\SymptomController::class, 'updateSymptom'])->name('symptom.update');
 Route::get('/home/symptomForm/print/{yearly_no}/id/{id}', [App\Http\Controllers\SymptomController::class, 'printSymptom'])->name('symptom.print');

@@ -84,7 +84,7 @@
                       <button class="btn btn-success" type="submit" title="View">
                       <span class="fas fa-eye"></span>
                   </button></a></td>
-                     <td><a href="/home/symptomForm">
+                     <td><a href="/home/symptomForm/{{$patientDetail['yearly_no']}}">
                       <button class="btn btn-warning" type="submit" title="Add Diagnosis">
                       <span class="fas fa-diagnoses"></span>
                   </button></a></td>

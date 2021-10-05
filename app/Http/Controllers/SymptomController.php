@@ -38,10 +38,10 @@ class SymptomController extends Controller
         return back()->with("message", $request->disease . " details can't saved. Please try again");
     
     }
-    public function showSymptom(){
-        
+    public function showSymptom($yearly_no){
+           
             # code...
-            return view('symptom');
+            return view('symptom',compact('yearly_no'));
     }
 
     public function showPatient($id){

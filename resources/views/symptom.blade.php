@@ -119,14 +119,14 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label class="form-label">Yearly Number</label>
-                        <input type="number"  class="form-control" minlength="4" maxlength="8" name="yearly_no" id="yearly_no" placeholder="Yearly Number">
+                        <input type="number"  class="form-control" minlength="4" maxlength="8" name="yearly_no" id="yearly_no" value="{{$yearly_no}}" placeholder="Yearly Number" readonly>
                         @error('yearly_no')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                       </div>
                     <div class="form-group  col-md">
                         <label class="form-label">Symptoms</label>
-                        <input type="text" class="form-control" name="symptoms" id="symptoms" placeholder="Symptoms" required>
+                        <input type="text" class="form-control" name="symptoms" id="symptoms" placeholder="Symptoms"  required>
                         @error('symptoms')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
