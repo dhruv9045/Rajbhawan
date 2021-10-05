@@ -52,7 +52,10 @@
                         <td>{{$showDetail['date_of_birth']}}</td>
                         <td>{{$showDetail['phone_no']}}</td>
                         <td>{{$showDetail['disease']}}</td>
-                      <td><a href="/home/personForm/edit/{{$showDetail['id']}}" class="btn" style="background-color: blue; color:white;">Edit</a></td> 
+                      <td><a href="/home/personForm/edit/{{$showDetail['id']}}">  
+                        <button class="btn btn-primary" type="submit" title="Edit ">
+                        <span class="fas fa-edit"></span>
+                    </button></a></td> 
                       </tr>
                     </tbody>
                   </table>
@@ -100,8 +103,14 @@
                         <td>{{$showSymptom['disease']}}</td>
                         <td>{{$showSymptom['remark']}}</td>
                         
-                      <td><a href="/home/symptomForm/edit/{{$showSymptom['id']}}" class="btn" style="background-color: blue; color:white;">Edit</a></td>
-                      <td><a href="/home/symptomForm/print/{{$showDetail['yearly_no']}}/id/{{$showSymptom['id']}}" class="btn" style="background-color: gray; color:white;" target="blank">Print</a></td>
+                      <td><a href="/home/symptomForm/edit/{{$showSymptom['id']}}" >
+                        <button class="btn btn-primary" type="submit" title="Edit Diagnosis">
+                        <span class="fas fa-edit"></span>
+                    </button></a></td>
+                      <td><a href="/home/symptomForm/print/{{$showDetail['yearly_no']}}/id/{{$showSymptom['id']}}" >
+                        <button class="btn btn-danger" type="submit" title="Print">
+                        <span class="fas fa-print"></span>
+                    </button></a></td>
            
                       </tr>
                      @endforeach

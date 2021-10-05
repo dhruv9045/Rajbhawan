@@ -30,7 +30,7 @@
    }
    .heading-row{
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .body-row {
   font-size: 1rem;
@@ -50,7 +50,7 @@
 @media (min-width: 576px) and (max-width: 767.98px) { 
   .heading-row{
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 .body-row {
   font-size: 1.5rem;
@@ -94,8 +94,8 @@ h2{
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
   .heading-row{
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 .body-row {
   font-size: 1.5rem;

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Punjab Raj Bahawan Dispensary</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,30 +17,36 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                background-size: cover;
+                background-image: url({{url('image/background3.jpg')}});
+
             }
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+        <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
+                        <a href="{{ url('/home') }}" class="text-sm text-white-700 underline">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm text-white-700 underline">Log in</a>
 
-                        @if (Route::has('register'))
+                        {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
+                        @endif --}}
                     @endauth
                 </div>
             @endif
-            <div>
-                <h1>PUNJAB RAJ BHAWAN</h1>
-                <h4>Dr. Amrik</h4>
-                <h4>Aman Prabhakar</h4>
+            <div style="user-select: none;">
+                <h1>PUNJAB RAJ BHAWAN  DISPENSARY</h1>
+                <h4>Dr. Amrik Chigma</h4>
+                <h4>Pharmacist: Aman Prabhakar</h4>
                 <address>Punjab Raj Bahawan Dispensary, Sector 7A, Chandigarh</address>
             </div>
         </div>
+        
+        
     </body>
+  
 </html>

@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{url('https://use.fontawesome.com/releases/v5.15.4/js/all.js')}}" data-auto-replace-svg="nest"></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -46,11 +48,11 @@
                                 </li>
                             @endif
 
-                            @if (Route::has('register'))
+                            {{-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif --}}
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -91,6 +93,15 @@
         <main class="py-4">
             @yield('content')
         </main>
+       
     </div>
+    <footer>
+        <p>&copy;@php  
+            echo "Copyright ";  
+                echo date("Y");
+                echo " dksDev";
+            @endphp ||
+            Developed by: <a href="https://dksdev.com" target="__blank">https://dksdev.com</a></p>
+        </footer>
 </body>
 </html>

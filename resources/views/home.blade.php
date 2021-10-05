@@ -5,13 +5,38 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header row justify-content-between">
                     {{-- <div class="col-md-4 ">{{ __('List') }} 
                     </div> --}}
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">   
-                        <a href="{{ route('patient') }}"><button class="btn btn-primary" type="button">Add Patient</button></a>
+                    <div class="col-4">   
+                        <a href="{{ route('patient') }}">
+                          <button class="btn btn-success" type="submit" title="Add Patient">
+                          <span class="fas fa-plus"></span>
+                      </button></a>
                     </div>
+                    <div class="col-4">
+                      <div class="mx-auto pull-right">
+                              <form action="" method="GET" role="search">
+                                  <div class="input-group">
+                                      <span class="input-group-btn mr-5 mt-1">
+                                          <button class="btn btn-info" type="submit" title="Search Patient">
+                                              <span class="fas fa-search"></span>
+                                          </button>
+                                      </span>
+                                      <input type="text" class="form-control mr-2" name="term" placeholder="Search projects" id="term">
+                                      <a href="" class=" mt-1">
+                                          <span class="input-group-btn">
+                                              <button class="btn btn-danger" type="button" title="Refresh page">
+                                                  <span class="fas fa-sync-alt"></span>
+                                              </button>
+                                          </span>
+                                      </a>
+                                  </div>
+                              </form>
+                      </div>
+                  </div>
                 </div>
+                
                 <table class="table-responsive-sm table">
                     <thead>
                       <tr>
@@ -51,9 +76,18 @@
 
                       {{-- Edit Details --}}
                       
-                     <td><a href="/home/personForm/edit/{{$patientDetail['id']}}" class="btn" style="background-color: blue; color:white;">Edit</a></td>
-                     <td><a href="/home/patient/view/{{$patientDetail['yearly_no']}}/id/{{$patientDetail['id']}}" class="btn" style="background-color: green; color:white;">View</a></td>
-                     <td><a href="/home/symptomForm" class="btn" style="background-color: yellow; color:black;">Add Symptoms</a></td>
+                     <td><a href="/home/personForm/edit/{{$patientDetail['id']}}" >
+                      <button class="btn btn-primary" type="submit" title="Edit">
+                      <span class="fas fa-edit"></span>
+                  </button></a></td>
+                     <td><a href="/home/patient/view/{{$patientDetail['yearly_no']}}/id/{{$patientDetail['id']}}" >
+                      <button class="btn btn-success" type="submit" title="View">
+                      <span class="fas fa-eye"></span>
+                  </button></a></td>
+                     <td><a href="/home/symptomForm">
+                      <button class="btn btn-warning" type="submit" title="Add Diagnosis">
+                      <span class="fas fa-diagnoses"></span>
+                  </button></a></td>
                       </tr>
                       @endforeach
                     </tbody>
